@@ -2,10 +2,6 @@
 
 class Walker {
 
-  var $north;
-  var $east;
-  var $south;
-  var $west;
   var $location;
 
   function initialiseLocation($node) {
@@ -16,25 +12,33 @@ class Walker {
   function takeCommand($command){
     switch ($command) {
       case 'n':
-        $this->location = $this->location->north;
+      $direction = 'North';
+        //$this->location = $this->location->exits['north'];
         break;
 
       case 'e':
-        $this->location = $this->location->east;
+        //$this->location = $this->location->east;
+      $direction = 'East';
         break;
 
       case 's':
-        $this->location = $this->location->south;
+        //$this->location = $this->location->south;
+       $direction = 'South';
         break;
 
       case 'w':
-        $this->location = $this->location->west;
+        //$this->location = $this->location->west;
+      $direction = 'West';
         break;
 
       default:
-        # code...
+        $direction = '';
         break;
     }
+    if(isset($this->location->exits[$direction])){
+      $this->location = $this->location->exits[$direction];
+    }
+    
   }
 
   function whereAreYou() {

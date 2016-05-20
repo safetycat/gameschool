@@ -21,31 +21,30 @@ $lounge->setLocationName("Lounge");
 
 // build the board
 
-$stairWay->setNorth($ballRoom);
-$stairWay->setWest($diningRoom);
-$stairWay->setEast($library);
-$stairWay->setSouth($hall);
+$stairWay->setExit('North', $ballRoom );
+$stairWay->setExit('West',$diningRoom );
+$stairWay->setExit('East', $library );
+$stairWay->setExit('South', $hall );
 
-$ballRoom->setWest($kitchen);
-$ballRoom->setSouth($stairWay);
+$ballRoom->setExit('West', $kitchen);
+$ballRoom->setExit('South', $stairWay );
 
-$kitchen->setEast($ballRoom);
-$kitchen->setSouth($diningRoom);
+$kitchen->setExit('East', $ballRoom );
+$kitchen->setExit('South', $diningRoom );
 
-$diningRoom->setNorth($kitchen);
-$diningRoom->setEast($stairWay);
-$diningRoom->setSouth($lounge);
+$diningRoom->setExit('North', $kitchen );
+$diningRoom->setExit('East', $stairWay );
+$diningRoom->setExit('South', $lounge );
 
-$lounge->setNorth($diningRoom);
+$lounge->setExit('North', $diningRoom );
 
-$hall->setNorth($stairWay);
-$hall->setEast($study);
+$hall->setExit('North', $stairWay );
+$hall->setExit('East', $study );
 
-$study->setWest($hall);
+$study->setExit('West', $hall);
 
-$library->setWest($stairWay);
-$library->setNorth($conservatory);
+$library->setExit('North', $conservatory );
+$library->setExit('West',$stairWay );
 
-$conservatory->setSouth($library);
-
+$conservatory->setExit('South', $library );
 ?>

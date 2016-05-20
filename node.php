@@ -4,46 +4,20 @@ class Node {
 
   public $exits = [];
 
-  var $north;
-  var $east;
-  var $south;
-  var $west;
+  var $room;
 
-  var $location;
 
-  // function __construct($loc) {
-  //   if(isset($loc)){
-  //     $this->setLocationName($loc)
-  //   }
-  // }
-
-function setExit($node, $exit){
+function setExit($exit, $node){
   $this->exits[$exit] = $node;
 }
 
 
-  // function setNorth($node){
-  //   $this->north = $node;
-  // }
-
-  // function setEast($node){
-  //   $this->east = $node;
-  // }
-
-  // function setSouth($node){
-  //   $this->south = $node;
-  // }
-
-  // function setWest($node){
-  //   $this->west = $node;
-  // }
-
   function setLocationName($loc){
-    $this->location = $loc;
+    $this->room = $loc;
   }
 
   function getLocation() {
-    echo $this->location;
+    echo $this->room;
   }
 
 }
