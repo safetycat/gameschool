@@ -2,10 +2,13 @@
 
 class Node {
 
+  public $exits = [];
+
   var $north;
   var $east;
   var $south;
   var $west;
+
   var $location;
 
   // function __construct($loc) {
@@ -14,21 +17,26 @@ class Node {
   //   }
   // }
 
-  function setNorth($node){
-    $this->north = $node;
-  }
+function setExit($node, $exit){
+  $this->exits[$exit] = $node;
+}
 
-  function setEast($node){
-    $this->east = $node;
-  }
 
-  function setSouth($node){
-    $this->south = $node;
-  }
+  // function setNorth($node){
+  //   $this->north = $node;
+  // }
 
-  function setWest($node){
-    $this->west = $node;
-  }
+  // function setEast($node){
+  //   $this->east = $node;
+  // }
+
+  // function setSouth($node){
+  //   $this->south = $node;
+  // }
+
+  // function setWest($node){
+  //   $this->west = $node;
+  // }
 
   function setLocationName($loc){
     $this->location = $loc;

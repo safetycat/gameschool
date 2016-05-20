@@ -8,7 +8,7 @@
   $walker->initialiseLocation($stairWay);
 
   // handle i/o which we're using cookies because PHP.
-  $cookie_name = 'tree_game_cookie';
+  $cookie_name = 'graph_game_cookie';
   $reload = '';
 
   if(!isset($_COOKIE[$cookie_name])) {
@@ -44,10 +44,10 @@
   <?php echo $reload; ?>
 </script>
 <body>
-  You are in the: <?php echo $walker->whereAreYou(); ?><br />
-  Number of commands: <?php echo count($commands)-1; ?><br />
+  You are in the: <b><?php echo $walker->whereAreYou(); ?></b><br /><br />
+  Number of commands: <?php echo count($commands)-1; ?><br /><br />
 
-  Commands are now: <?php if(isset($_COOKIE[$cookie_name])) {echo $_COOKIE[$cookie_name];} ?> <br />
+  Commands are now: <?php if(isset($_COOKIE[$cookie_name])) {echo $_COOKIE[$cookie_name];} ?> <br /><br />
   <form>
     <input type="text"   name="token" />
     <input type="submit" name="action" value="submit"/>
